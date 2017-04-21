@@ -11,14 +11,15 @@
 #include <cstring>
 #include <unistd.h>
 #include <netdb.h>
+#include <stdlib.h>
 
 // pass -f switch to biosocks2 to run in foreground when debugging
 
-const int listenPort = 12345;
-const char* listenIP = "0.0.0.0";
+const int listenPort = 8080;
+const char* listenIP = getenv("LISTEN_IP");
 const bool authRequired = true;
-const char* authUsername = "login";
-const char* authPassword = "password";
+const char* authUsername = getenv("LOGIN");
+const char* authPassword = getenv("PASSWORD");
 
 const char* allowedIPs[] =
 {

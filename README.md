@@ -9,3 +9,19 @@ Simple efficient socks5 server
 
 NOTE: You can optionally pass -f switch to run in foreground for debugging.
 
+
+## Docker
+
+MANDATORY ENV:
+```
+LISTEN_IP
+LOGIN
+PASSWORD
+```
+
+Exposed port: `8080`
+
+### Example usage:
+```
+docker run --rm -p 8080:8080 -e LISTEN_IP=0.0.0.0 -e LOGIN=foo -e PASSWORD=bar sbani/biosocks2
+```
